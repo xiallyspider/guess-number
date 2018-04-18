@@ -41,18 +41,18 @@ function main(rdm, ipt) {
     random = createRandom(4)
     console.log("答案："+random)
     let input = ipt
-    input = readlineSync.question('');
-    for(let times = 0; times < 10; times++){
+    input = readlineSync.question('')
+    for (let times = 9; times > 0; times--) {
         if (input === '' || input.split('').length !== 4) {
             console.log("请输入4个数字（1-9之间）！")
-            input = readlineSync.question('');
-            times++
+            console.log("剩余输入次数：" + times + "次")
+            input = readlineSync.question('')
         } else {
             resultArr = verifyInput(random, input)
             result = resultArr[0] + 'A' + resultArr[1] + 'B'
             console.log(result)
-            input = readlineSync.question('');
-            times++
+            console.log("剩余输入次数：" + times + "次")
+            input = readlineSync.question('')
         }
     }
     console.log("输入次数用完，游戏结束！")
