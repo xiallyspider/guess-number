@@ -31,7 +31,7 @@ function verifyInput(random, input) {
    });
    bCount = bCount - aCount
    result = [aCount, bCount]
-   return result
+   return result[0] + "A" + result[1] + "B"
 }
 function main(rdm, ipt) {
     console.log("开始宾果游戏！")
@@ -48,8 +48,7 @@ function main(rdm, ipt) {
             console.log("剩余输入次数：" + times + "次")
             input = readlineSync.question('')
         } else {
-            resultArr = verifyInput(random, input)
-            result = resultArr[0] + 'A' + resultArr[1] + 'B'
+            result = verifyInput(random, input)
             console.log(result)
             console.log("剩余输入次数：" + times + "次")
             input = readlineSync.question('')
@@ -57,11 +56,8 @@ function main(rdm, ipt) {
     }
     console.log("输入次数用完，游戏结束！")
     return false
-    // resultArr = verifyInput(random, input)
-    // result = resultArr[0] + 'A' + resultArr[1] + 'B'
-    // console.log(result)
-    // return result
 }
 let rdm = ''
 let ipt = ''
 main(rdm, ipt)
+module.exports = verifyInput
