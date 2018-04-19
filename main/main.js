@@ -44,7 +44,7 @@ function main(rdm, ipt) {
     input = readlineSync.question('')
     for (let times = 9; times > 0; times--) {
         if (input === '' || input.split('').length !== 4) {
-            console.log("请输入4个数字（1-9之间）！")
+            console.log("请输入4个数字（0-9之间）！")
             console.log("剩余输入次数：" + times + "次")
             input = readlineSync.question('')
         } else {
